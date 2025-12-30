@@ -10,12 +10,12 @@ df = st.session_state.df
 
 c1, c2 = st.columns(2)
 with c1:
-    f_name = st.text_input("File name :")
+    f_type = st.selectbox("Export Format :",["csv","xlsx"])
 
 with c2:
-    f_type = st.selectbox("Export Format :",["CSV","EXCEL","TEXT"])
+    f_name = st.text_input("File name :",value= f"Output.{f_type}")
 
-if f_type == "CSV":
+if f_type == "csv":
     dt = df.to_csv(index = False).encode("utf-8")
     st.download_button(
         label="Download CSV",
@@ -24,7 +24,7 @@ if f_type == "CSV":
         mime="text/csv"
     ) 
 
-elif f_type == "EXCEL" :
+elif f_type == "xlsx" :
     buffer = BytesIO()
     df.to_excel(buffer,index = False, engine = "openpyxl") 
     buffer.seek(0)
