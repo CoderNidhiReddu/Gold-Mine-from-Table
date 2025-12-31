@@ -9,31 +9,37 @@ st.set_page_config(page_title = "Handling missing values : ")
 if "df" not in st.session_state:
     st.error("No Data available. ")
     st.stop()
-df = st.session_state.df
 
+df = st.session_state.df
 df_col = st.session_state.df.columns.tolist()
 
-c1,c2,c3 = st.columns(3)    
-c4,c5 = st.columns(2)
-with c1:
-    old_col = st.selectbox("Select Column", df_col, key="c1")
-with c2:
-    new_name = st.text_input("Enter the New Name : ")
-with c3 : 
-    st.write("")
-    st.write("")
-    if st.button("Rename ", type='primary', width= "stretch"):
-        if new_name:
-            st.session_state.df.rename(columns={old_col : new_name}, inplace = True)
+@st.fragment
+def column_op():
 
-with c4:
-    col = st.selectbox("Select Column", df_col, key="c2")
-with c5:
-    st.write("")
-    st.write("")
-    if st.button("Drop Column", type="primary", width="stretch"):
-        st.session_state.df.drop(columns=[col], inplace= True)
+    c1,c2,c3 = st.columns(3)    
+    c4,c5 = st.columns(2)
+    with c1:
+        old_col = st.selectbox("Select Column", df_col, key="c1")
+    with c2:
+        new_name = st.text_input("Enter the New Name : ")
+    with c3 : 
+        st.write("")
+        st.write("")
+        if st.button("Rename ", type='primary', width= "stretch"):
+            if new_name:
+                st.session_state.df.rename(columns={old_col : new_name}, inplace = True)
+                st.rerun()
 
+    with c4:
+        col = st.selectbox("Select Column", df_col, key="c2")
+    with c5:
+        st.write("")
+        st.write("")
+        if st.button("Drop Column", type="primary", width="stretch"):
+            st.session_state.df.drop(columns=[col], inplace= True)
+            st.rerun()
+
+column_op()
 # st.dataframe(st.session_state.df, width = "stretch")
 
 st.markdown(
