@@ -79,3 +79,4 @@ st.dataframe(df)
 
 # show graphs between x and y
 # column wise mean, mode, median, sum, avg, ...
+
