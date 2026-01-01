@@ -17,13 +17,13 @@ It's an entry point to start interaction with dashboard, well it contains a dumm
 <img width="1738" height="868" alt="image" src="https://github.com/user-attachments/assets/bc5b9e2a-5c94-4d41-8a9a-a81e0635c083" />
 Here we focuses on cleaning and preparing data before analysis.
 It includes :
-a.) Column Renaming : Select an existing column and provide a new name to that column
-b.) Droping Column : Select any column which you find not useful or noisy, remove it completely from the entire dataset.
-c.) Handling Missing Values : Missing values inside the numeric columns are handled with these available methods :
-    i. Fill with mean
-    ii. Fill with median
-    iii. Drop rows containing missing values
-    iv. Fill with a custom value
+- Column Renaming : Select an existing column and provide a new name to that column
+- Droping Column : Select any column which you find not useful or noisy, remove it completely from the entire dataset.
+- Handling Missing Values : Missing values inside the numeric columns are handled with these available methods :
+    - Fill with mean
+    - Fill with median
+    - Drop rows containing missing values
+    - Fill with a custom value
 It prevents errors in analysis and model training.
 
 ## Visualization 
