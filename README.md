@@ -3,10 +3,10 @@
 This is a Project is an interactive, multi-page Streamlit dashboard designed to simplify the entire data preprocessing workflow from uploading raw datasets to cleaning, visualizing, and exporting refined data.
 
 # Table of Contents
-1. [Go to Uploading](#Uploading) 
-2. [Go to Preporcessing](#Preprocessing)
-3. [Go to Visualization](#Visualization) 
-4. [Go to Export](#Exporting) 
+1. [Go to Uploading](##Uploading) 
+2. [Go to Preporcessing](##Preprocessing)
+3. [Go to Visualization](##Visualization) 
+4. [Go to Export](##Export) 
 
 ## Uploading :
 <img width="1756" height="933" alt="image" src="https://github.com/user-attachments/assets/faf6a35b-4314-4294-b486-e22e1d36130d" />
