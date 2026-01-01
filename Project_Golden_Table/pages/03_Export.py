@@ -1,7 +1,8 @@
 import streamlit as st
 from io import BytesIO
 
-st.title("Download Data : ")
+st.markdown("<h1 style = 'color:#ab56e8;' >Download Data : </h1>",
+            unsafe_allow_html=True)
 
 if "df" not in st.session_state:
     st.error("No Data available. ")
@@ -21,7 +22,8 @@ if f_type == "csv":
         label="Download CSV",
         data= dt,
         file_name= f_name,
-        mime="text/csv"
+        mime="text/csv",
+        type = "primary"
     ) 
 
 elif f_type == "xlsx" :
@@ -34,4 +36,3 @@ elif f_type == "xlsx" :
         data= buffer,
         file_name= f_name
     )      
-
